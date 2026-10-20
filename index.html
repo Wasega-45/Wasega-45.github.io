@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173d2b">
+<meta name="description" content="Wilson Wasega — JKUAT GIS student seeking GIS and Surveying attachment opportunities. Interests include Web GIS, spatial analysis, remote sensing, mapping and evidence-based planning.">
+<title>Wilson Wasega | Geospatial & Surveying Portfolio</title>
+<style>
+:root {
+  --site-primary: #315b3d;
+  --site-secondary: #dce8d4;
+  --site-background: #f5f4ed;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #203b2a;
+  --site-on-background: #1d2b22;
+  --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-font-heading: Georgia, "Times New Roman", serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--site-font-body); background: light-dark(#f5f4ed,#101912); color: light-dark(#1d2b22,#e8eee7); line-height: 1.6; }
+a { color: inherit; }
+.site-root { min-height: 100vh; background-color: var(--site-background); color: var(--site-on-background); border-radius: 0; }
+.topbar { background: var(--site-primary); color: var(--site-on-primary); padding: 15px clamp(18px,5vw,76px); display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.brand { display:flex; gap:11px; align-items:center; text-decoration:none; font-weight:800; letter-spacing:.04em; }
+.brand-mark { width:38px;height:38px;border:1px solid #b9d3ad;border-radius:50%;display:grid;place-items:center; }
+nav { display:flex;gap:22px;flex-wrap:wrap;align-items:center; }
+nav a { font-size:.9rem;text-decoration:none;color:#edf4e9;opacity:.92; }
+nav a:hover { text-decoration:underline;text-underline-offset:5px; }
+.hero { background:linear-gradient(120deg,#173d2b 0%,#315b3d 62%,#64784a 100%);color:#fff;padding:clamp(48px,8vw,100px) clamp(20px,7vw,100px) 64px;position:relative;overflow:hidden; }
+.hero:after { content:"";position:absolute;width:440px;height:440px;border:1px solid #ffffff24;border-radius:50%;right:-120px;top:-150px;box-shadow:0 0 0 36px #ffffff0a,0 0 0 78px #ffffff08;opacity:var(--site-decoration-opacity);pointer-events:none; }
+.hero-grid { display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);gap:45px;align-items:center;max-width:1180px;margin:auto;position:relative;z-index:1; }
+.eyebrow { text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800;color:#c5dbb9; }
+h1,h2,h3 { line-height:1.12;margin:0;font-weight:700; }
+h1,h2 { font-family:var(--site-font-heading); }
+h1 { font-size:clamp(2.8rem,7vw,5.5rem);margin:17px 0 18px;letter-spacing:-.045em; }
+h1 span { color:#c5db9c; }
+.hero p { font-size:1.08rem;max-width:670px;color:#e4eee2; }
+.hero-actions { display:flex;gap:12px;flex-wrap:wrap;margin-top:28px; }
+.btn { display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:calc(12px * var(--site-radius-scale));padding:12px 18px;text-decoration:none;font-weight:750;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:750; }
+.btn-light { background:#f5f4ed;color:#173d2b; }
+.btn-outline { border-color:#b9d3ad;color:#fff;background:transparent; }
+.btn-green { background:var(--site-primary);color:white; }
+.map-panel { min-height:290px;border:1px solid #d4e2ca66;border-radius:calc(24px * var(--site-radius-scale));padding:20px;background:#ffffff0b;position:relative;overflow:hidden; }
+.map-panel svg { width:100%;height:100%;min-height:250px;display:block; }
+.map-label { position:absolute;bottom:17px;left:18px;background:#173d2be8;border:1px solid #c5db9c80;border-radius:9px;padding:9px 12px;font-size:.78rem; }
+main { max-width:1180px;margin:auto;padding:0 clamp(20px,5vw,65px) 70px; }
+.section { padding:72px 0 0; }
+.section-heading { max-width:740px;margin-bottom:28px; }
+.section-heading .eyebrow { color:#55784d; }
+h2 { font-size:clamp(2rem,4vw,3.1rem);margin:12px 0 14px;letter-spacing:-.03em; }
+.lead { color:light-dark(#536157,#c0cbbf);font-size:1.03rem; }
+.about-grid { display:grid;grid-template-columns:1.15fr .85fr;gap:25px; }
+.panel { background:light-dark(#fff,#1b281e);border:1px solid light-dark(#dce2d7,#354338);border-radius:calc(18px * var(--site-radius-scale));padding:25px; }
+.panel h3 { font-size:1.15rem;margin-bottom:10px; }
+.focus-list { display:grid;gap:12px; }
+.focus-item { display:flex;gap:12px;align-items:flex-start; }
+.iconbox { flex:0 0 40px;height:40px;border-radius:12px;background:var(--site-secondary);color:var(--site-on-secondary);display:grid;place-items:center;font-weight:800; }
+.focus-item p { margin:3px 0 0;color:light-dark(#536157,#c0cbbf);font-size:.92rem; }
+.skills { display:flex;gap:10px;flex-wrap:wrap; }
+.skill { border:1px solid light-dark(#c9d7c4,#425745);background:light-dark(#eef3e9,#243528);padding:9px 13px;border-radius:999px;font-size:.9rem;font-weight:650; }
+.project-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px; }
+.project { display:flex;flex-direction:column;min-height:100%; }
+.project-art { height:145px;border-radius:12px;margin-bottom:18px;overflow:hidden;background:linear-gradient(135deg,#dbe6cf,#9ab38a); }
+.project-art svg { width:100%;height:100%; }
+.project .tag { color:#54744b;text-transform:uppercase;font-size:.72rem;font-weight:850;letter-spacing:.1em; }
+.project h3 { font-size:1.25rem;margin:8px 0; }
+.project p { color:light-dark(#536157,#c0cbbf);margin:0 0 14px; }
+.project ul { padding-left:19px;margin:0 0 16px; }
+.project li { margin:5px 0; }
+.status { display:inline-block;align-self:flex-start;background:#f3e9c8;color:#684d16;border-radius:999px;padding:5px 9px;font-size:.75rem;font-weight:800;margin-top:auto; }
+.relevance { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.relevance .panel { padding:22px; }
+.relevance .number { color:#688553;font-size:.8rem;letter-spacing:.12em;font-weight:850; }
+.relevance h3 { margin:10px 0;font-size:1.1rem; }
+.relevance p { color:light-dark(#536157,#c0cbbf);font-size:.92rem;margin:0; }
+.attachment { background:var(--site-secondary);color:var(--site-on-secondary);border-radius:calc(22px * var(--site-radius-scale));padding:clamp(24px,5vw,46px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center; }
+.attachment h2 { margin-top:8px; }
+.attachment p { max-width:720px; }
+.contact-grid { display:grid;grid-template-columns:.8fr 1.2fr;gap:22px; }
+.contact-details p { color:light-dark(#536157,#c0cbbf); }
+form { display:grid;gap:13px; }
+label { display:grid;gap:6px;font-size:.88rem;font-weight:750; }
+input,textarea { width:100%;padding:12px 13px;border:1px solid light-dark(#cbd5c8,#47574a);border-radius:10px;background:light-dark(#fff,#111b14);color:light-dark(#1d2b22,#e8eee7);font:inherit; }
+textarea { min-height:125px;resize:vertical; }
+.small-note { font-size:.8rem;color:light-dark(#657267,#aeb9ae); }
+footer { background:#173d2b;color:#e4eee2;padding:25px clamp(20px,5vw,65px);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.85rem; }
+@media (max-width:760px) {
+ .topbar { align-items:flex-start;flex-direction:column; }
+ nav { gap:14px; }
+ .hero-grid,.about-grid,.contact-grid { grid-template-columns:1fr; }
+ .map-panel { min-height:230px; }
+ .project-grid,.relevance { grid-template-columns:1fr; }
+ .attachment { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+
+/* High-contrast, vibrant geospatial refresh */
+:root {
+  --site-primary:#123b70;
+  --site-secondary:#d9fbe8;
+  --site-background:#f7fbff;
+  --site-on-primary:#ffffff;
+  --site-on-secondary:#123b35;
+  --site-on-background:#142b45;
+}
+html, body { background:#f7fbff !important; color:#142b45 !important; }
+body { color-scheme:light !important; }
+.site-root { background:#f7fbff !important; color:#142b45 !important; }
+.topbar { background:#102a43 !important; box-shadow:0 4px 20px #102a431a; }
+.brand-mark { border-color:#38e08f !important; color:#38e08f; }
+nav a { color:#ffffff !important; opacity:1 !important; font-weight:650; }
+.hero { background:radial-gradient(circle at 82% 18%,#2563eb 0,transparent 30%),linear-gradient(125deg,#102a43 0%,#075985 48%,#087f8c 100%) !important; }
+.hero:after { border-color:#ffffff35; box-shadow:0 0 0 36px #ffffff0c,0 0 0 78px #ffffff08; }
+.eyebrow { color:#a7f3d0 !important; }
+.section-heading .eyebrow { color:#087f8c !important; }
+h1 span { color:#86efac !important; }
+.hero p { color:#f0f9ff !important; }
+.btn-light { background:#ffffff !important; color:#123b70 !important; border-color:#ffffff !important; }
+.btn-outline { background:#102a43a8 !important; border-color:#a7f3d0 !important; color:#ffffff !important; }
+.btn-green { background:#16a34a !important; color:#ffffff !important; box-shadow:0 5px 14px #16a34a25; }
+.btn { transition:transform .18s ease, box-shadow .18s ease; }
+.btn:hover { transform:translateY(-2px); box-shadow:0 8px 22px #102a4328; }
+.map-panel { background:linear-gradient(145deg,#0f766e,#123b70) !important; border-color:#5eead4 !important; box-shadow:0 18px 40px #102a4328; }
+.map-label { background:#102a43f2 !important; color:#ffffff !important; }
+.panel { background:#ffffff !important; color:#142b45 !important; border:1px solid #d6e4f0 !important; box-shadow:0 10px 28px #163b5c0d; }
+.panel p, .focus-item p, .project p, .relevance p, .contact-details p, .lead, .small-note { color:#40566d !important; }
+.section-heading h2, h2, h3 { color:#102a43 !important; }
+.skills .skill { background:#e0f2fe !important; color:#123b70 !important; border-color:#7dd3fc !important; }
+.iconbox { background:#d1fae5 !important; color:#065f46 !important; }
+.project-art { background:linear-gradient(135deg,#bfdbfe,#a7f3d0 55%,#fde68a) !important; border:1px solid #b7d5e7; }
+.project .tag { color:#087f8c !important; }
+.status { background:#fef3c7 !important; color:#854d0e !important; border:1px solid #fbbf24; }
+.relevance .number { color:#087f8c !important; }
+.attachment { background:linear-gradient(120deg,#d1fae5,#dbeafe) !important; color:#123b35 !important; border:1px solid #99f6e4; }
+.attachment h2, .attachment p { color:#123b35 !important; }
+input, textarea { background:#ffffff !important; color:#142b45 !important; border:1px solid #94a3b8 !important; }
+input:focus, textarea:focus, a:focus-visible, button:focus-visible { outline:3px solid #f59e0b !important; outline-offset:3px; }
+footer { background:#102a43 !important; color:#f0f9ff !important; border-top:4px solid #22c55e; }
+footer span { color:#f0f9ff !important; }
+@media (max-width:760px) {
+  .topbar { background:#102a43 !important; }
+  .hero { padding-top:46px; }
+  .hero p, .lead, .project p, .panel p { font-size:1rem; line-height:1.75; }
+  .project-art { height:170px; }
+  .panel { padding:22px; }
+}
+
+</style>
+</head>
+<body>
+<div class="site-root" id="top">
+<header class="topbar">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">⌖</span><span>WILSON WASEGA <small style="display:block;font-size:.65rem;font-weight:500;letter-spacing:.12em">GEOSPATIAL · SURVEYING · WEB GIS</small></span></a>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#geospatial-interests">Applications</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">JKUAT GIS Student · GIS & Surveying Attachment Applicant</div>
+      <h1>Space technologies.<br><span>Grounded in impact.</span></h1>
+      <p>I am Wilson Wasega, a GIS student at JKUAT building skills in geospatial technologies, surveying and Web GIS. I am interested in turning spatial data and earth observation into clear information that supports communities, planning and practical decisions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#projects">Explore my project work ↘</a>
+        <a class="btn btn-outline" href="#contact">Discuss an attachment</a>
+      </div>
+    </div>
+    <div class="map-panel" aria-label="Illustrative topographic map artwork">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Illustrative topographic contours, map grid and location markers">
+        <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#d5e4ca" stroke-opacity=".25" stroke-width="1"/></pattern></defs>
+        <rect width="400" height="300" fill="url(#grid)"/>
+        <g fill="none" stroke="#c7dba7" stroke-width="1.4" opacity=".9">
+          <path d="M-20 70C40 20 90 45 122 78S198 124 243 77 339 22 430 65"/>
+          <path d="M-20 88C43 40 83 61 117 92S194 142 250 95 342 43 430 83"/>
+          <path d="M-20 109C42 63 78 78 111 108S191 162 257 113 350 63 430 103"/>
+          <path d="M-20 132C35 88 72 99 105 127S188 181 263 135 354 85 430 125"/>
+          <path d="M-20 162C31 117 70 125 101 151S183 205 268 162 356 112 430 149"/>
+          <path d="M-20 197C30 153 66 157 98 182S179 232 273 190 358 144 430 181"/>
+          <path d="M-20 230C30 189 63 190 94 213S177 264 280 222 363 178 430 214"/>
+          <path d="M20 -20C65 35 58 70 82 105S140 171 117 218 107 273 142 320"/>
+          <path d="M55 -20C99 34 91 72 115 109S170 173 151 222 143 273 176 320"/>
+          <path d="M300 -20C260 32 276 72 299 105S342 167 322 216 322 274 353 320"/>
+        </g>
+        <path d="M20 250C90 220 115 247 170 214S258 180 292 200 350 235 390 190" fill="none" stroke="#80b8c0" stroke-width="4" stroke-linecap="round"/>
+        <path d="M20 250C90 220 115 247 170 214S258 180 292 200 350 235 390 190" fill="none" stroke="#d9f2e8" stroke-width="1.1" stroke-dasharray="5 7"/>
+        <g transform="translate(220 118)"><circle r="17" fill="#e2f0d0" fill-opacity=".18" stroke="#e2f0d0" stroke-width="1.5"/><circle r="6" fill="#d6e7a7"/><path d="M0 -25V-10M0 10V25M-25 0H-10M10 0H25" stroke="#d6e7a7" stroke-width="1.5"/></g>
+        <g fill="#f5f4ed" font-family="system-ui" font-size="10" letter-spacing="1.5"><text x="16" y="20">SPATIAL THINKING</text><text x="282" y="282">CONTOUR STUDY</text></g>
+      </svg>
+      <div class="map-label">Geospatial data → real-world impact</div>
+    </div>
+  </div>
+</section>
+<main>
+<section class="section" id="about">
+  <div class="section-heading"><div class="eyebrow">01 / About me</div><h2>Connecting space technologies with real-world needs.</h2><p class="lead">I am building my capability in geospatial analysis and mapping, with an interest in how reliable spatial information can help communities and public institutions plan services more equitably.</p></div>
+  <div class="about-grid">
+    <div class="panel">
+      <h3>My professional direction</h3>
+      <p>I am developing skills across GIS, surveying, mapping, remote sensing and spatial data workflows. My interests include Web GIS, spatial databases, Earth observation and socio-economic data collection. I am seeking an attachment where I can learn from experienced practitioners, support active projects and grow through fieldwork, analysis and laboratory experience.</p>
+      <p class="small-note">I am a GIS student interested in applying geospatial technology to practical challenges in health, environmental management and planning.</p>
+    </div>
+    <div class="panel">
+      <h3>Areas I want to contribute to</h3>
+      <div class="focus-list">
+        <div class="focus-item"><div class="iconbox">⌖</div><div><strong>GIS & spatial analysis</strong><p>Preparing and analysing location data to reveal patterns, relationships and service gaps.</p></div></div>
+        <div class="focus-item"><div class="iconbox">↗</div><div><strong>Surveying & geomatics</strong><p>Developing field skills in measurement, control, mapping and reliable spatial data collection.</p></div></div>
+        <div class="focus-item"><div class="iconbox">⌘</div><div><strong>Web GIS & geo-apps</strong><p>Exploring interactive maps, spatial databases and digital tools for collecting and sharing information.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="skills">
+  <div class="section-heading"><div class="eyebrow">02 / Technical toolkit</div><h2>Technical Skills</h2><p class="lead">My toolkit brings together GIS software, spatial data, Earth observation, field surveying and programming.</p></div>
+  <div class="skills">
+    <span class="skill">QGIS</span><span class="skill">ArcGIS</span><span class="skill">Web GIS</span><span class="skill">SQL</span><span class="skill">PostgreSQL / PostGIS</span><span class="skill">Python</span><span class="skill">Remote Sensing</span><span class="skill">Surveying</span><span class="skill">Mapping & Cartography</span><span class="skill">Spatial Analysis</span>
+  </div>
+</section>
+<section class="section" id="projects">
+  <div class="section-heading"><div class="eyebrow">03 / Selected project work</div><h2>Geospatial technologies with practical impact</h2><p class="lead">Selected work and areas of interest across Web GIS, environmental mapping and surveying.</p></div>
+  <div class="project-grid">
+    <article class="panel project">
+      <div class="project-art"><svg viewBox="0 0 500 180" role="img" aria-label="Illustrative healthcare delivery network map"><rect width="500" height="180" fill="#dce8d4"/><g fill="none" stroke="#92ad83" stroke-width="1.5"><path d="M-10 30C100 75 80 10 180 40S310 90 520 20M-10 80C100 120 150 45 230 80S370 140 520 75M-10 150C100 100 170 170 260 130S400 100 520 150"/></g><g stroke="#315b3d" stroke-width="3" fill="none"><path d="M70 125L160 72L270 98L360 43L440 90M160 72L190 140L270 98"/></g><g fill="#315b3d" stroke="#fff" stroke-width="3"><circle cx="70" cy="125" r="8"/><circle cx="160" cy="72" r="8"/><circle cx="270" cy="98" r="8"/><circle cx="360" cy="43" r="8"/><circle cx="440" cy="90" r="8"/></g><g fill="#315b3d"><rect x="15" y="12" width="120" height="22" rx="5"/><text x="25" y="27" font-size="10" fill="white" font-family="system-ui">HEALTH ACCESS</text></g></svg></div>
+      <div class="tag">Flagship · In progress</div><h3>Kenya-wide medicine delivery Web GIS</h3>
+      <p>A Web GIS project in progress exploring how health facilities could coordinate medicine requests and delivery across Kenya’s 47 counties.</p>
+      <ul><li>Interactive facility and service-location mapping</li><li>SQL and PostgreSQL/PostGIS spatial data foundation</li><li>Potential route planning and delivery-status workflows</li></ul>
+      <span class="status">In progress — concept and development</span>
+    </article>
+    <article class="panel project">
+      <div class="project-art"><svg viewBox="0 0 500 180" role="img" aria-label="Illustrative land use and vegetation monitoring map"><rect width="500" height="180" fill="#e5e8c9"/><path d="M0 0H170L210 45L160 80L210 130L170 180H0Z" fill="#9ebd8a"/><path d="M170 0H350L310 45L360 80L300 130L340 180H170L210 130L160 80L210 45Z" fill="#c7d39a"/><path d="M350 0H500V180H340L300 130L360 80L310 45Z" fill="#789a69"/><g stroke="#f8f6e8" stroke-width="3" fill="none"><path d="M20 150L130 110L190 122L270 65L355 84L480 20"/><path d="M65 0L90 55L80 100L130 110"/></g><g fill="#315b3d" font-family="system-ui" font-size="11"><text x="20" y="25">LAND COVER</text><text x="335" y="160">CHANGE</text></g></svg></div>
+      <div class="tag">Applied GIS · Learning focus</div><h3>Land-use and environmental change mapping</h3>
+      <p>A project direction using multi-date satellite imagery and GIS to examine land-cover, vegetation and environmental change for planning and natural-resource management.</p>
+      <ul><li>Satellite image preparation and multi-date comparison</li><li>QGIS mapping and change visualisation</li><li>Potential application to vegetation, wetlands, soil moisture or catchments</li></ul>
+      <span class="status">Geospatial application</span>
+    </article>
+    <article class="panel project">
+      <div class="project-art"><svg viewBox="0 0 500 180" role="img" aria-label="Illustrative road network and public service access map"><rect width="500" height="180" fill="#e9e6d8"/><g fill="none" stroke-linecap="round"><path d="M-20 145L100 110L185 130L275 80L370 95L520 30" stroke="#b4a98e" stroke-width="14"/><path d="M-20 145L100 110L185 130L275 80L370 95L520 30" stroke="#fffaf0" stroke-width="2" stroke-dasharray="9 8"/><path d="M100 -10L120 45L100 110L150 190M275 -10L260 40L275 80L250 190M410 -10L390 45L370 95L410 190" stroke="#c0b49a" stroke-width="9"/><path d="M100 -10L120 45L100 110L150 190M275 -10L260 40L275 80L250 190M410 -10L390 45L370 95L410 190" stroke="#fffaf0" stroke-width="1.5" stroke-dasharray="6 7"/></g><g fill="#315b3d" stroke="#fff" stroke-width="3"><circle cx="120" cy="45" r="8"/><circle cx="275" cy="80" r="8"/><circle cx="390" cy="45" r="8"/></g><text x="16" y="23" fill="#315b3d" font-size="11" font-family="system-ui">ROADS & SERVICE ACCESS</text></svg></div>
+      <div class="tag">Project concept</div><h3>Roads and public-service access mapping</h3>
+      <p>A proposed GIS workflow to map transport networks and public facilities, helping planners explore connectivity, accessibility and gaps in service coverage.</p>
+      <ul><li>Road and facility layers</li><li>Attribute checks and map design</li><li>Spatial analysis to support evidence-led planning</li></ul>
+      <span class="status">Academic project direction</span>
+    </article>
+    <article class="panel project">
+      <div class="project-art"><svg viewBox="0 0 500 180" role="img" aria-label="Illustrative survey fieldwork map with points and traverse line"><rect width="500" height="180" fill="#e6e8d8"/><g stroke="#9db08f" stroke-width="1" opacity=".8"><path d="M0 30H500M0 60H500M0 90H500M0 120H500M0 150H500M50 0V180M100 0V180M150 0V180M200 0V180M250 0V180M300 0V180M350 0V180M400 0V180M450 0V180"/></g><polyline points="70,130 150,70 260,95 355,40 425,110" fill="none" stroke="#315b3d" stroke-width="3"/><g fill="#315b3d" stroke="#fff" stroke-width="2"><circle cx="70" cy="130" r="7"/><circle cx="150" cy="70" r="7"/><circle cx="260" cy="95" r="7"/><circle cx="355" cy="40" r="7"/><circle cx="425" cy="110" r="7"/></g><g fill="#315b3d" font-size="11" font-family="system-ui"><text x="15" y="20">SURVEYING & CONTROL POINTS</text><text x="57" y="149">P1</text><text x="140" y="58">P2</text><text x="250" y="115">P3</text><text x="360" y="29">P4</text></g></svg></div>
+      <div class="tag">Field skills · Academic practice</div><h3>Surveying, control and mapping</h3>
+      <p>Surveying and mapping interests include field measurements, control points, traverse computations and cartographic presentation.</p>
+      <ul><li>Field observations and point coordinates</li><li>Traverse calculations and checks</li><li>Clear maps and technical reporting</li></ul>
+      <span class="status">Surveying and mapping</span>
+    </article>
+  </div>
+</section>
+<section class="section" id="applications">
+  <div class="section-heading"><div class="eyebrow">04 / Where I want to apply geospatial skills</div><h2>Ready to contribute to meaningful geospatial work</h2><p class="lead">I am interested in cross-sectoral geospatial work that uses Earth observation, GIS, surveying and digital data collection to help institutions understand needs, target resources and monitor change.</p></div>
+  <div class="relevance">
+    <div class="panel"><div class="number">01 / HEALTH</div><h3>Health facility mapping</h3><p>I am interested in mapping health facilities, examining service coverage and using spatial evidence to support outreach and equitable access.</p></div>
+    <div class="panel"><div class="number">02 / INFRASTRUCTURE</div><h3>Roads and connectivity</h3><p>I want to strengthen my ability to map road networks, assess connectivity and support infrastructure planning with spatial evidence.</p></div>
+    <div class="panel"><div class="number">03 / ENVIRONMENT</div><h3>Land and environmental monitoring</h3><p>Remote sensing and GIS can help monitor land cover, soil moisture, water resources, vegetation and environmental change over time.</p></div>
+  </div>
+  <div class="panel" style="margin-top:18px">
+    <h3>What I hope to bring and learn</h3>
+    <p>I can bring curiosity, commitment to learning, and a developing foundation in GIS software, spatial data, mapping and surveying. Through attachment, I hope to learn professional workflows, contribute carefully to assigned tasks, strengthen field and laboratory practice, and help turn geospatial information into useful outputs.</p>
+  </div>
+</section>
+<section class="section" id="geospatial-interests">
+  <div class="section-heading"><div class="eyebrow">04 / Geospatial application areas</div><h2>From Earth observation to community impact</h2><p class="lead">My interests span the connected workflows that make geospatial information useful: collecting reliable data, analysing change, building accessible tools and communicating results.</p></div>
+  <div class="relevance">
+    <div class="panel"><div class="number">01 / EARTH OBSERVATION</div><h3>Satellite imagery & remote sensing</h3><p>Explore multi-temporal Sentinel imagery for land-cover change, soil moisture, vegetation and environmental monitoring.</p></div>
+    <div class="panel"><div class="number">02 / FIELD DATA</div><h3>Geomatics & socio-economic surveys</h3><p>Combine field observations, smartphone-based data collection, coordinates and attribute information to build usable spatial datasets.</p></div>
+    <div class="panel"><div class="number">03 / DIGITAL GEOSPATIAL</div><h3>Geo-apps & spatial databases</h3><p>Interested in web maps, geo-portals, spatial databases and location-based applications that make geographic information easier to use.</p></div>
+    <div class="panel"><div class="number">04 / LAND & AGRICULTURE</div><h3>Land-use, farms & degradation</h3><p>Apply mapping and analysis to agricultural landscapes, land degradation, forest monitoring and changing land use.</p></div>
+    <div class="panel"><div class="number">05 / WATER & ECOSYSTEMS</div><h3>Wetlands, lakes & catchments</h3><p>Explore mapping of aquatic vegetation, rivers, wetlands and catchment-level environmental change.</p></div>
+    <div class="panel"><div class="number">06 / SURVEYING</div><h3>Measurement & spatial control</h3><p>Build practical ability in field measurement, traversing, coordinate computations, mapping and quality checks.</p></div>
+  </div>
+</section>
+<section class="section" id="attachment">
+  <div class="attachment">
+    <div><div class="eyebrow" style="color:#55784d">Currently seeking</div><h2>GIS & Surveying Attachment</h2><p>I am currently seeking a GIS and Surveying attachment where I can contribute, learn from experienced professionals and build practical field and project experience.</p></div>
+    <a class="btn btn-green" href="#contact">Contact me ↗</a>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="section-heading"><div class="eyebrow">05 / Contact</div><h2>Let's connect</h2><p class="lead">For GIS and surveying attachment opportunities, geospatial collaboration and project discussions, feel free to contact me by email or phone.</p></div>
+  <div class="contact-grid">
+    <div class="panel contact-details">
+      <h3>Wilson Wasega</h3>
+      <p>JKUAT GIS Student<br>GIS · Earth Observation · Surveying & Mapping</p>
+      <p class="small-note">GIS student at JKUAT with interests in Web GIS, Earth observation, surveying and spatial analysis.</p>
+      <p><strong>Email:</strong> <a href="mailto:wilsonwasega90@gmail.com">wilsonwasega90@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+254718177462">0718 177 462</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Wasega-45" target="_blank" rel="noopener">github.com/Wasega-45</a></p>
+    </div>
+    <div class="panel contact-card">
+      <h3>Get in touch</h3>
+      <p>If you have an opportunity in GIS, surveying, mapping or geospatial research, I would be glad to connect and discuss how I could contribute while learning from your team.</p>
+      <p><strong>Email:</strong> <a href="mailto:wilsonwasega90@gmail.com">wilsonwasega90@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+254718177462">0718 177 462</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Wasega-45" target="_blank" rel="noopener">github.com/Wasega-45</a></p>
+      <p class="small-note">Tap the email address to compose an email, or the phone number to call from a compatible device.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer><span>© <span id="year"></span> Wilson Wasega · GIS & Surveying Portfolio</span><span>Built around spatial thinking and practical learning.</span></footer>
+</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
